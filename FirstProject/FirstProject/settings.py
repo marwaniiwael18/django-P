@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Event',  # Add the Event app
 ]
 
 MIDDLEWARE = [
@@ -49,12 +50,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'FirstProject.urls' # esmm app .pointage al urls.py
+ROOT_URLCONF = 'FirstProject.urls'  # esm app .pointage al urls.py
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'Template'],  # Add the Template directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
