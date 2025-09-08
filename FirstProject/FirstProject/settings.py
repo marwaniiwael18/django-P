@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'FirstProject.urls'
+ROOT_URLCONF = 'FirstProject.urls' # esmm app .pointage al urls.py
 
 TEMPLATES = [
     {
