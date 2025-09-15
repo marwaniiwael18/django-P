@@ -5,6 +5,14 @@ from django.db import models
 class Person(models.Model):
     cin = models.CharField(max_length=20)
     email = models.EmailField()
+    
+    class Meta:
+        constraints = [
+            models.CheckConstraint(
+                check=models.Q(email__endswith='@esprit.tn'),
+                name='email_domain_constraint'
+            )
+        ]
 
 class Event(models.Model):
     CATEGORY_CHOICES = [
@@ -23,14 +31,6 @@ class Event(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     organizer = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='organized_events')
-    
-    class Meta:
-        constraints = [
-            models.CheckConstraint(
-                check=models.Q(email__endswith='@esprit.tn'),
-                name='email_domain_constraint'
-            )
-        ]
 
 class User(Person):
     pass

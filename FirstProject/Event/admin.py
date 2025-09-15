@@ -17,7 +17,7 @@ class EventAdmin(admin.ModelAdmin):
     
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('cin', 'email', 'django_user')
+    list_display = ('cin', 'email')
     search_fields = ('cin', 'email')
 
 @admin.register(Participation)
